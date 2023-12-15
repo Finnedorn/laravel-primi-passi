@@ -14,5 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $data = [
+        'welcome'=> 'benvenuto nella mia prima pagina con Laravel',
+        'p'=>'clicca su "about" per proseguire'
+    ];
+    return view('home', $data);
+})->name('home');
+
+Route::get('/about', function () {
+    $welcome = [
+        'rejoyce'=> 'yeeeeeeee!!!!',
+    ];
+    return view('about', $welcome);
+})->name('about');
